@@ -1,5 +1,5 @@
 % test RSA
-m=("Sameer");
+m=("Timbaktu");
 disp("Input Message");
 disp(m);
 m1=toascii(m);

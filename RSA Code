@@ -1,0 +1,27 @@
+% test RSA
+m=("Sameer");
+disp("Input Message");
+disp(m);
+m1=toascii(m);
+%m1=128
+x=length(m1);
+e=7;
+n=187;
+d=23;
+for i=1:x;
+c(i)=mod(m1(i)^e,n);
+%c = mod(m1^e,n);
+end;
+disp("Encrypted Message")
+disp(c);
+p=floor(d/3);
+q=(d-p*3);
+for i=1:x;
+%m2(i)=mod(c(i)^d,n);
+a=mod(c(i)^p,n);
+b=mod(c(i)^q,n);
+m2(i)=mod(a^3*b,n);
+end ;
+m3=char(m2);
+disp("Output Message")
+disp(m3);
